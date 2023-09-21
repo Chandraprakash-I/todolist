@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="box" id="heading">
+        <h1><%= title %></h1>
+        <h1>The day is <%= dayis %>.</h1>
+    </div>
+
+   
+        <div class="box ">
+            
+            <% itemis.forEach(function(element){%>
+                <form action="/delete" method="post">
+                    <div class="item">
+                        <input name="checkbox" value="<%= element._id %>" onChange="this.form.submit()" type="checkbox">
+                        <p><%= element.name %></p>
+                    </div>
+                    <input type="hidden" name="listname" value="<%= title %>">
+                </form>
+                
+            <%});%> 
+               
+                 
+     
+            <form class="item" action="/" method="post">
+                <input name="item" type="text" placeholder="enter item" autocomplete="off">
+                <button type="submit" name="list" value="<%= title %>">+</button>
+            </form>
+        </div>
+
+
+</body>
+</html>
