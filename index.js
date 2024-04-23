@@ -7,13 +7,13 @@ const _=require("lodash");
 
 const mongoose=require('mongoose');
 mongoose.set('strictQuery', false);
-mongoose.connect("mongodb+srv://chandraprakashi2023:GpkxUjsFYuDuCEqT@cluster0.j3ihj8o.mongodb.net/?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true},(err)=>{
+mongoose.connect("mongodb://127.0.0.1:27017/todolistDB",{useNewUrlParser: true, useUnifiedTopology: true},(err)=>{
     if(!err) console.log("connected");
     else console.log(err); 
 });
 
 
-
+// "mongodb+srv://chandraprakashi2023:GpkxUjsFYuDuCEqT@cluster0.j3ihj8o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 app.set("view engine","ejs");
 
 
@@ -213,5 +213,5 @@ app.post("/delete",function(req,res){
 
 
 app.listen(3000,function(){
-    console.log("Listening");
+    console.log("Listening on port 3000");
 });
